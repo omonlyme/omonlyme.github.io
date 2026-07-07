@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>blog - Om Navadiya</title>
+<meta name="description" content="Notes on cybersecurity, machine learning, and full-stack builds — Om Navadiya.">
+<meta name="author" content="Om Navadiya">
+
+<meta property="og:title" content="blog - Om Navadiya">
+<meta property="og:description" content="Notes on cybersecurity, machine learning, and full-stack builds.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://omnavadiya.me/blog.html">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!--
+  Starter content notice (not shown to visitors):
+  The four posts below are placeholders so the page isn't empty on day one.
+  Replace the title/date/tags/body of each <details class="post"> with your
+  own writing, or duplicate the block to add a new post. Newest should stay
+  on top. See README.md for more on adding posts.
+-->
+
+<div id="theme-veil" aria-hidden="true"></div>
+<div id="theme-toast" class="theme-toast" aria-live="polite"></div>
+
+<!-- ============ TERMINAL TITLEBAR ============ -->
+<header class="titlebar">
+  <div class="titlebar-inner">
+    <div class="tl-dots" aria-hidden="true">
+      <span class="dot dot-a"></span>
+      <span class="dot dot-b"></span>
+      <span class="dot dot-c"></span>
+    </div>
+    <a class="tl-path" href="index.html">om@navadiya<span class="tl-colon">:</span><span class="tl-tilde">~/blog</span><span class="tl-dollar">$</span></a>
+
+    <nav class="tl-nav" aria-label="Section navigation">
+      <a href="index.html#about">about</a>
+      <a href="index.html#skills">skills</a>
+      <a href="index.html#projects">projects</a>
+      <a href="index.html#certs">certs</a>
+      <a href="blog.html" aria-current="page" class="tl-active">blog</a>
+      <a href="index.html#contact">contact</a>
+    </nav>
+
+    <button id="theme-toggle" class="theme-toggle" type="button" role="switch" aria-checked="true" aria-label="Toggle light and dark mode">
+      <span class="toggle-track">
+        <span class="toggle-icon toggle-icon-moon">
+          <svg viewBox="0 0 24 24" width="13" height="13"><path fill="currentColor" d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5 9 9 0 1 0 20.5 14.5Z"/></svg>
+        </span>
+        <span class="toggle-icon toggle-icon-sun">
+          <svg viewBox="0 0 24 24" width="13" height="13"><circle cx="12" cy="12" r="4.2" fill="currentColor"/><g stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 2.5v2.4M12 19.1v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/></g></svg>
+        </span>
+        <span class="toggle-knob"></span>
+      </span>
+    </button>
+  </div>
+  <div class="titlebar-scanline" aria-hidden="true"></div>
+</header>
+
+<main>
+
+  <!-- ============ BLOG HERO ============ -->
+  <section class="section blog-hero">
+    <div class="section-inner">
+      <p class="prompt-line reveal">
+        <span class="prompt-user">om@navadiya</span><span class="prompt-sep">:~$</span>
+        <span class="prompt-cmd">ls -la ~/blog --sort=date</span>
+      </p>
+      <h1 class="blog-title reveal">BLOG</h1>
+      <p class="hero-blurb reveal">
+        Write-ups on cybersecurity, ML experiments, and whatever broke in production this week.
+        No newsletter, no backend — it's a static site. Bug me on GitHub if something's wrong.
+      </p>
+
+      <div class="tag-filter reveal" id="tag-filter" role="group" aria-label="Filter posts by topic">
+        <button class="filter-btn is-active" data-filter="all" type="button">all</button>
+        <button class="filter-btn" data-filter="cybersecurity" type="button">cybersecurity</button>
+        <button class="filter-btn" data-filter="machine-learning" type="button">machine-learning</button>
+        <button class="filter-btn" data-filter="web-dev" type="button">web-dev</button>
+        <button class="filter-btn" data-filter="nlp" type="button">nlp</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ POST LIST ============ -->
+  <section class="section posts-section" id="posts">
+    <div class="section-inner">
+
+      <div class="post-list" id="post-list">
+
+        <details class="post" data-tags="cybersecurity certifications">
+          <summary class="post-summary">
+            <span class="post-chevron" aria-hidden="true">&gt;</span>
+            <span class="post-summary-main">
+              <span class="post-cmd">cat 2026-05-12-ceh-exam-notes.md</span>
+              <span class="post-title">What the CEH Exam Doesn't Tell You</span>
+            </span>
+            <span class="post-meta">
+              <span class="post-date">2026-05-12</span>
+              <span class="post-read">6 min</span>
+            </span>
+          </summary>
+          <div class="post-body">
+            <p>
+              I walked into the Certified Ethical Hacker exam expecting something close to a live
+              CTF — ports to scan, shells to pop. It's closer to a very long, very dry vocabulary
+              test with occasional scenario questions. That mismatch cost me more prep time than
+              any actual topic did.
+            </p>
+            <p>
+              What actually mattered: knowing the exact phase names (reconnaissance, scanning,
+              gaining access, maintaining access, covering tracks) cold, being able to match tools
+              to phases without hesitating, and treating the practice exams as the real syllabus —
+              the official courseware wanders, the question bank doesn't.
+            </p>
+            <p>
+              The certificate itself doesn't make you dangerous. It makes you legible to people who
+              hire for security roles, which turns out to matter more than I expected going in.
+            </p>
+            <div class="post-tags">
+              <span class="tag">cybersecurity</span><span class="tag">certifications</span><span class="tag">cisco</span>
+            </div>
+          </div>
+        </details>
+
+        <details class="post" data-tags="machine-learning nlp">
+          <summary class="post-summary">
+            <span class="post-chevron" aria-hidden="true">&gt;</span>
+            <span class="post-summary-main">
+              <span class="post-cmd">cat 2026-02-20-cyberbullying-detector.md</span>
+              <span class="post-title">Teaching a Model to Recognize Cyberbullying (and What Broke First)</span>
+            </span>
+            <span class="post-meta">
+              <span class="post-date">2026-02-20</span>
+              <span class="post-read">8 min</span>
+            </span>
+          </summary>
+          <div class="post-body">
+            <p>
+              The pitch for this project was simple: flag abusive content before a human has to see
+              it. The preprocessing was where all the actual difficulty lived. Hashtags and mentions
+              carry meaning that naive tokenization destroys — strip them wrong and the model loses
+              the exact signal you wanted it to learn from.
+            </p>
+            <p>
+              Sarcasm and reclaimed slurs broke the first version badly. A sentiment layer helped
+              more than I expected, not because sentiment alone predicts abuse, but because it gave
+              the classifier a second, differently-biased signal to reconcile against the raw text
+              features.
+            </p>
+            <p>
+              The uncomfortable lesson: precision and recall pull against each other in exactly the
+              cases that matter most — a model that's too aggressive silences real conversation, one
+              that's too lenient defeats the point of building it at all.
+            </p>
+            <div class="post-tags">
+              <span class="tag">machine-learning</span><span class="tag">nlp</span><span class="tag">tensorflow</span>
+            </div>
+          </div>
+        </details>
+
+        <details class="post" data-tags="nlp web-dev">
+          <summary class="post-summary">
+            <span class="post-chevron" aria-hidden="true">&gt;</span>
+            <span class="post-summary-main">
+              <span class="post-cmd">cat 2025-11-05-resume-parser-irony.md</span>
+              <span class="post-title">I Built a Resume Parser and Now I Trust Resumes Even Less</span>
+            </span>
+            <span class="post-meta">
+              <span class="post-date">2025-11-05</span>
+              <span class="post-read">5 min</span>
+            </span>
+          </summary>
+          <div class="post-body">
+            <p>
+              Building an entity extractor for resumes means staring at hundreds of them in a row,
+              and after enough repetitions the formatting patterns start to feel less like
+              self-presentation and more like a genre with its own tropes — "spearheaded," "synergy,"
+              a skills section that's really a keyword-stuffing exercise for whatever ATS is reading it.
+            </p>
+            <p>
+              The technical side was its own puzzle: PDFs don't preserve document structure the way
+              you'd hope, so "which line is the job title vs. the company name" ends up depending on
+              layout heuristics almost as much as the actual NLP model.
+            </p>
+            <p>
+              Somewhere in that pile of PDFs I made peace with my own resume being a rough draft of
+              who I'm becoming, not a deposition. The parser doesn't judge. Mostly.
+            </p>
+            <div class="post-tags">
+              <span class="tag">nlp</span><span class="tag">python</span><span class="tag">spacy</span>
+            </div>
+          </div>
+        </details>
+
+        <details class="post" data-tags="web-dev">
+          <summary class="post-summary">
+            <span class="post-chevron" aria-hidden="true">&gt;</span>
+            <span class="post-summary-main">
+              <span class="post-cmd">cat 2025-08-30-oceanarc-exim-lessons.md</span>
+              <span class="post-title">Shipping OceanArc Exim: Full-Stack Lessons From a Real Client</span>
+            </span>
+            <span class="post-meta">
+              <span class="post-date">2025-08-30</span>
+              <span class="post-read">7 min</span>
+            </span>
+          </summary>
+          <div class="post-body">
+            <p>
+              Every side project I'd shipped before this had exactly one stakeholder: me. OceanArc
+              Exim had a client who needed the inquiries form to actually reach their inbox reliably,
+              which reframed half my "nice to have" backlog into "actually load-bearing."
+            </p>
+            <p>
+              The REST API design ended up simpler than my first draft — fewer, chunkier endpoints
+              that matched how the frontend actually consumed data, instead of a purist one-resource-
+              per-endpoint layout that looked better in a diagram than it worked in practice.
+            </p>
+            <p>
+              MongoDB's schema flexibility was a genuine advantage here: the content the client
+              wanted to manage kept shifting shape in the first two weeks, and a rigid relational
+              schema would have meant a migration every time they changed their mind.
+            </p>
+            <div class="post-tags">
+              <span class="tag">web-dev</span><span class="tag">react</span><span class="tag">mongodb</span>
+            </div>
+          </div>
+        </details>
+
+      </div>
+
+      <p class="post-empty" id="post-empty" hidden>No posts tagged with that yet — check back later, or pick another filter.</p>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER :: status bar ============ -->
+<footer class="footer" id="contact">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <p class="prompt-line"><span class="prompt-user">om@navadiya</span><span class="prompt-sep">:~$</span> <span class="prompt-cmd">contact --init</span></p>
+      <p class="footer-blurb">
+        Open to internships, collaborations, and interesting problems.
+        Reach out — I reply faster than my model trains.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="mailto:hello@omnavadiya.me">say hello</a>
+        <a class="btn btn-ghost" href="https://github.com/omnavadiya" target="_blank" rel="noopener">github</a>
+        <a class="btn btn-ghost" href="https://linkedin.com/in/omnavadiya" target="_blank" rel="noopener">linkedin</a>
+      </div>
+    </div>
+
+    <div class="status-bar">
+      <span class="status-item"><span class="status-dot"></span> connection: secure</span>
+      <span class="status-item">📍 Vadodara, Gujarat, IN</span>
+      <span class="status-item" id="ist-clock">--:--:-- IST</span>
+    </div>
+
+    <p class="footer-copy">© <span id="year"></span> Om Navadiya — compiled without warnings, deployed without regrets.<span class="cursor-blink">_</span></p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

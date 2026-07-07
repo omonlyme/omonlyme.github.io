@@ -1,10 +1,337 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <title>Test Webpage</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>onlyme - Om Navadiya</title>
+<meta name="description" content="Om Navadiya — Computer Science undergrad, cybersecurity enthusiast, and full-stack tinkerer based in Vadodara, India.">
+<meta name="author" content="Om Navadiya">
+
+<!-- Open Graph -->
+<meta property="og:title" content="onlyme - Om Navadiya">
+<meta property="og:description" content="CS undergrad // Cybersecurity enthusiast // Full-stack tinkerer.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://omnavadiya.me/">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="onlyme - Om Navadiya">
+<meta name="twitter:description" content="CS undergrad // Cybersecurity enthusiast // Full-stack tinkerer.">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Hello World!</h1>
-    <p>Your HTML test webpage is working perfectly.</p>
+
+<!-- theme transition veil (signature animated wipe) -->
+<div id="theme-veil" aria-hidden="true"></div>
+<div id="theme-toast" class="theme-toast" aria-live="polite"></div>
+
+<!-- ============ TERMINAL TITLEBAR ============ -->
+<header class="titlebar">
+  <div class="titlebar-inner">
+    <div class="tl-dots" aria-hidden="true">
+      <span class="dot dot-a"></span>
+      <span class="dot dot-b"></span>
+      <span class="dot dot-c"></span>
+    </div>
+    <a class="tl-path" href="index.html">om@navadiya<span class="tl-colon">:</span><span class="tl-tilde">~</span><span class="tl-dollar">$</span></a>
+
+    <nav class="tl-nav" aria-label="Section navigation">
+      <a href="#about">about</a>
+      <a href="#skills">skills</a>
+      <a href="#projects">projects</a>
+      <a href="#certs">certs</a>
+      <a href="blog.html">blog</a>
+      <a href="#contact">contact</a>
+    </nav>
+
+    <button id="theme-toggle" class="theme-toggle" type="button" role="switch" aria-checked="true" aria-label="Toggle light and dark mode">
+      <span class="toggle-track">
+        <span class="toggle-icon toggle-icon-moon">
+          <svg viewBox="0 0 24 24" width="13" height="13"><path fill="currentColor" d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5 9 9 0 1 0 20.5 14.5Z"/></svg>
+        </span>
+        <span class="toggle-icon toggle-icon-sun">
+          <svg viewBox="0 0 24 24" width="13" height="13"><circle cx="12" cy="12" r="4.2" fill="currentColor"/><g stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 2.5v2.4M12 19.1v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/></g></svg>
+        </span>
+        <span class="toggle-knob"></span>
+      </span>
+    </button>
+  </div>
+  <div class="titlebar-scanline" aria-hidden="true"></div>
+</header>
+
+<main>
+
+  <!-- ============ HERO :: whoami ============ -->
+  <section class="section hero" id="top">
+    <canvas id="matrix-rain" aria-hidden="true"></canvas>
+    <div class="section-inner">
+      <p class="prompt-line reveal">
+        <span class="prompt-user">om@navadiya</span><span class="prompt-sep">:~$</span>
+        <span class="prompt-cmd">whoami</span>
+      </p>
+
+      <h1 class="hero-name reveal" data-text="OM NAVADIYA">OM NAVADIYA</h1>
+
+      <p class="hero-tagline reveal">
+        <span class="tag-seg">CS Undergrad</span>
+        <span class="tag-slash">//</span>
+        <span class="tag-seg">Cybersecurity Enthusiast</span>
+        <span class="tag-slash">//</span>
+        <span class="tag-seg">Full-Stack Tinkerer</span>
+        <span class="cursor-blink">_</span>
+      </p>
+
+      <p class="hero-blurb reveal">
+        Third-year Computer Science student in Vadodara, currently arguing with TensorFlow,
+        patching Express APIs past midnight, and holding a Certified Ethical Hacker badge that
+        makes me <em>marginally</em> more dangerous with a terminal than the average undergrad.
+      </p>
+
+      <div class="hero-cta reveal">
+        <a class="btn btn-primary" href="mailto:hello@omnavadiya.me">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M3 5h18v14H3V5Z" stroke="currentColor" stroke-width="1.6"/><path d="m3 6 9 7 9-7" stroke="currentColor" stroke-width="1.6"/></svg>
+          say hello
+        </a>
+        <a class="btn btn-ghost" href="https://github.com/omnavadiya" target="_blank" rel="noopener">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 0 0-3.8 23.39c.6.11.82-.26.82-.58v-2.17c-3.34.73-4.04-1.42-4.04-1.42-.55-1.4-1.34-1.77-1.34-1.77-1.09-.75.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.3 3.5 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.31-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.87.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.6-2.81 5.62-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z"/></svg>
+          github
+        </a>
+        <a class="btn btn-ghost" href="https://linkedin.com/in/omnavadiya" target="_blank" rel="noopener">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.6c0-1.34-.02-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.96V21h-4V9Z"/></svg>
+          linkedin
+        </a>
+      </div>
+
+      <!-- mini interactive terminal / easter egg -->
+      <div class="mini-term reveal" id="mini-term">
+        <div class="mini-term-output" id="mini-term-output" aria-live="polite">
+          <p class="mt-line mt-dim">Type <span class="mt-accent">help</span> to see available commands.</p>
+        </div>
+        <div class="mini-term-input-row">
+          <span class="mt-prompt">om@navadiya:~$</span>
+          <input type="text" id="mini-term-input" class="mini-term-input" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Mini terminal command input">
+        </div>
+      </div>
+
+      <div class="scroll-cue reveal" aria-hidden="true"><span></span></div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT :: cat about.md ============ -->
+  <section class="section" id="about">
+    <div class="section-inner">
+      <p class="prompt-line reveal"><span class="prompt-user">om@navadiya</span><span class="prompt-sep">:~$</span> <span class="prompt-cmd">cat about.md</span></p>
+
+      <div class="panel reveal">
+        <p>
+          I'm Om — a Vadodara-based CS undergrad who landed somewhere between security
+          researcher and full-stack developer and never quite picked a lane. I've built a
+          deep-learning system that hunts down cyberbullying on social platforms, shipped a
+          full-stack site for a real import-export business, and taught a script to actually
+          understand a resume — the irony of that last one is not lost on me.
+        </p>
+        <p>
+          When I'm not debugging something at 1 a.m., I'm usually deep in a Cisco cert, poking
+          at network protocols, or falling down whatever cybersecurity rabbit hole the internet
+          recommended that day. I'm CEH-certified, mildly dangerous with a packet sniffer, and
+          always looking for the next thing worth breaking — responsibly — or building.
+        </p>
+
+        <div class="philosophy">
+          <p class="mt-dim"># philosophy.txt</p>
+          <p>&gt; I firmly believe in the ancient developer proverb: <span class="tag-accent">"lie in your resume, verify in the interview."</span></p>
+          <p>&gt; (Please don't fact-check the deep learning model. It works. Mostly.)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS :: ls -la skills/ ============ -->
+  <section class="section" id="skills">
+    <div class="section-inner">
+      <p class="prompt-line reveal"><span class="prompt-user">om@navadiya</span><span class="prompt-sep">:~$</span> <span class="prompt-cmd">ls -la skills/</span></p>
+
+      <div class="skills-grid reveal">
+
+        <div class="skill-group">
+          <p class="skill-path"><span class="mt-dim">drwxr-xr-x</span> languages/</p>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">JavaScript</span><span class="tag">C++</span><span class="tag">C#</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <p class="skill-path"><span class="mt-dim">drwxr-xr-x</span> security-and-networking/</p>
+          <div class="tags">
+            <span class="tag tag-highlight">Ethical Hacking</span><span class="tag">Network Security</span><span class="tag">Computer Networks</span><span class="tag">Internet Protocols</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <p class="skill-path"><span class="mt-dim">drwxr-xr-x</span> ai-and-ml/</p>
+          <div class="tags">
+            <span class="tag">TensorFlow</span><span class="tag">Keras</span><span class="tag">Scikit-learn</span><span class="tag">NLP</span><span class="tag">Deep Learning</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <p class="skill-path"><span class="mt-dim">drwxr-xr-x</span> data-and-viz/</p>
+          <div class="tags">
+            <span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">EDA</span><span class="tag">Matplotlib</span><span class="tag">Seaborn</span><span class="tag">Power BI</span><span class="tag">Excel</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <p class="skill-path"><span class="mt-dim">drwxr-xr-x</span> web-dev/</p>
+          <div class="tags">
+            <span class="tag">React.js</span><span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">MongoDB</span><span class="tag">REST APIs</span><span class="tag">Streamlit</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <p class="skill-path"><span class="mt-dim">drwxr-xr-x</span> cloud-and-platforms/</p>
+          <div class="tags">
+            <span class="tag">GCP</span><span class="tag">Microsoft Azure</span><span class="tag">DigitalOcean</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <p class="skill-path"><span class="mt-dim">drwxr-xr-x</span> tools/</p>
+          <div class="tags">
+            <span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">Docker</span><span class="tag">Selenium</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS :: ./deploy --list ============ -->
+  <section class="section" id="projects">
+    <div class="section-inner">
+      <p class="prompt-line reveal"><span class="prompt-user">om@navadiya</span><span class="prompt-sep">:~$</span> <span class="prompt-cmd">./deploy --list</span></p>
+
+      <div class="projects-grid reveal">
+
+        <article class="project-card">
+          <div class="project-head">
+            <h3>Cyberbullying Detection<br>on Social Media Platforms</h3>
+            <span class="status status-research">RESEARCH</span>
+          </div>
+          <p class="project-desc">
+            Deep-learning system trained to flag abusive and harmful content across social platforms,
+            using an NLP pipeline for tokenization, text cleaning, and hashtag/mention filtering, with
+            sentiment analysis layered in for contextual accuracy.
+          </p>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">TensorFlow</span><span class="tag">Keras</span><span class="tag">NLP</span><span class="tag">Streamlit</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-head">
+            <h3>OceanArc Exim<br>Full-Stack Business Website</h3>
+            <span class="status status-live">DEPLOYED</span>
+          </div>
+          <p class="project-desc">
+            End-to-end business website for a real import-export company — REST APIs and a
+            MongoDB backend for dynamic content and inquiries, wrapped in a responsive UI built
+            for a B2B audience that just wants things to work.
+          </p>
+          <div class="tags">
+            <span class="tag">React.js</span><span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">MongoDB</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-head">
+            <h3>Resume Parser</h3>
+            <span class="status status-running">RUNNING</span>
+          </div>
+          <p class="project-desc">
+            Extracts structured data — skills, education, contact details, experience — from PDF,
+            DOCX, and TXT resumes via custom NLP entity extraction and a normalization pipeline.
+            Built partly out of curiosity about how recruiters' tools actually work.
+          </p>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">spaCy</span><span class="tag">NLP</span><span class="tag">PDF Parsing</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CERTS :: cat certifications.log ============ -->
+  <section class="section" id="certs">
+    <div class="section-inner">
+      <p class="prompt-line reveal"><span class="prompt-user">om@navadiya</span><span class="prompt-sep">:~$</span> <span class="prompt-cmd">cat certifications.log</span></p>
+
+      <ul class="cert-list reveal">
+        <li><span class="cert-check">[✓]</span> <span class="cert-name">Certified Ethical Hacker (CEH)</span><span class="cert-org">Cisco</span><span class="cert-date">May 2025</span></li>
+        <li><span class="cert-check">[✓]</span> <span class="cert-name">Fundamentals of Cybersecurity (EDU-102)</span><span class="cert-org">Zscaler</span><span class="cert-date">Apr 2025</span></li>
+        <li><span class="cert-check">[✓]</span> <span class="cert-name">Introduction to Cybersecurity</span><span class="cert-org">Cisco</span><span class="cert-date">Apr 2025</span></li>
+        <li><span class="cert-check">[✓]</span> <span class="cert-name">Computer Networks and Internet Protocol</span><span class="cert-org">NPTEL</span><span class="cert-date">May 2024</span></li>
+        <li><span class="cert-check">[✓]</span> <span class="cert-name">IIT Gandhinagar Finovate Hackathon</span><span class="cert-org">Participant</span><span class="cert-date">2025</span></li>
+      </ul>
+
+      <p class="prompt-line reveal" style="margin-top:2.6rem"><span class="prompt-user">om@navadiya</span><span class="prompt-sep">:~$</span> <span class="prompt-cmd">history | grep education</span></p>
+
+      <div class="edu-list reveal">
+        <div class="edu-item">
+          <div class="edu-line"></div>
+          <div class="edu-content">
+            <h4>Parul University, Vadodara</h4>
+            <p class="mt-dim">B.Tech, Computer Science &amp; Engineering — CGPA 6.5/10</p>
+            <p class="edu-date">Aug 2023 – Sept 2027</p>
+          </div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-line"></div>
+          <div class="edu-content">
+            <h4>Aspire Public School, Surat</h4>
+            <p class="mt-dim">Higher Secondary Education — 63.23%</p>
+            <p class="edu-date">Apr 2021 – Mar 2023</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER :: status bar ============ -->
+<footer class="footer" id="contact">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <p class="prompt-line"><span class="prompt-user">om@navadiya</span><span class="prompt-sep">:~$</span> <span class="prompt-cmd">contact --init</span></p>
+      <p class="footer-blurb">
+        Open to internships, collaborations, and interesting problems.
+        Reach out — I reply faster than my model trains.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="mailto:hello@omnavadiya.me">say hello</a>
+        <a class="btn btn-ghost" href="https://github.com/omnavadiya" target="_blank" rel="noopener">github</a>
+        <a class="btn btn-ghost" href="https://linkedin.com/in/omnavadiya" target="_blank" rel="noopener">linkedin</a>
+      </div>
+    </div>
+
+    <div class="status-bar">
+      <span class="status-item"><span class="status-dot"></span> connection: secure</span>
+      <span class="status-item">📍 Vadodara, Gujarat, IN</span>
+      <span class="status-item" id="ist-clock">--:--:-- IST</span>
+    </div>
+
+    <p class="footer-copy">© <span id="year"></span> Om Navadiya — compiled without warnings, deployed without regrets.<span class="cursor-blink">_</span></p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
