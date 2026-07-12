@@ -234,7 +234,7 @@
   function handleCommand(raw) {
     var cmd = raw.trim().toLowerCase();
     if (!cmd) return;
-    mtPrint('<span class="mt-accent">om@navadiya:~$</span> ' + escapeHtml(raw));
+    mtPrint('<span class="mt-accent">omnavadiya@onlyme:~$</span> ' + escapeHtml(raw));
 
     if (cmd === "sudo hire me" || cmd === "sudo hire-me") {
       mtPrint("[sudo] password for recruiter: ********", true);
